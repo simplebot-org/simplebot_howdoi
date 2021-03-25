@@ -1,0 +1,2 @@
+simplebot==1.0.1
+howdoi==2.0.14

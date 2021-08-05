@@ -1,3 +1,5 @@
+"""Plugin's filters and commands definitions."""
+
 import json
 
 import simplebot
@@ -14,18 +16,24 @@ except DistributionNotFound:
 
 @simplebot.command(name="/howdoi")
 def cmd_howdoi(payload: str, replies: Replies) -> None:
-    """Instant coding answers. Example: /howdoi format date bash"""
+    """Instant coding answers.
+
+    Example:
+    /howdoi format date bash
+    """
     try:
         res = json.loads(howdoi("{} -j".format(payload)))[0]
         replies.add(text="{}\n\n↗️ {}".format(res["answer"], res["link"]))
-    except (Exception, SystemExit):
-        replies.add(text="Something went wrong.")
+    except (Exception, SystemExit):  # noqa
+        replies.add(text="❌ Something went wrong.")
 
 
 class TestPlugin:
+    """Online tests"""
+
     def test_howdoi(self, mocker):
         msg = mocker.get_one_reply("/howdoi format date bash")
         assert "↗" in msg.text
 
         msg = mocker.get_one_reply("/howdoi -h")
-        assert msg.text == "Something went wrong."
+        assert "❌" in msg.text

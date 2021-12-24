@@ -17,5 +17,6 @@ Changelog
 - initial release
 
 
-.. _Unreleased: https://github.com/adbenitez/simplebot_howdoi/compare/v1.1.0...HEAD
-.. _Unreleased: https://github.com/adbenitez/simplebot_howdoi/compare/v1.0.0...v1.1.0
+.. _Unreleased: https://github.com/adbenitez/simplebot_howdoi/compare/v1.1.1...HEAD
+.. _1.1.1: https://github.com/adbenitez/simplebot_howdoi/compare/v1.1.0...v1.1.1
+.. _1.1.0: https://github.com/adbenitez/simplebot_howdoi/compare/v1.0.0...v1.1.0

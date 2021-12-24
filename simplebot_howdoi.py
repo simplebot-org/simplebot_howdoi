@@ -36,10 +36,9 @@ def cmd_howdoi(payload: str, replies: Replies) -> None:
 
 def _search(query: str, replies: Replies) -> None:
     try:
-        res = json.loads(howdoi("{} -j".format(query)))[0]
-        answer = res["answer"]
-        if answer:
-            replies.add(text="{}\n\n↗️ {}".format(answer, res["link"]))
+        resp = json.loads(howdoi(f"{query} -j"))[0]
+        if resp["answer"]:
+            replies.add(text=f"{resp['answer']}\n\n↗️ {resp['link']}")
         else:
             replies.add(text="❌ Nothing found.")
     except (Exception, SystemExit):  # noqa

@@ -1,6 +1,11 @@
 Changelog
 =========
 
+`1.1.1`_
+--------
+
+- check if the query returned an answer instead of displaying invalid response to user.
+
 `1.1.0`_
 --------
 

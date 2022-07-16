@@ -18,7 +18,7 @@ except DistributionNotFound:
 @simplebot.filter
 def query_filter(message: Message, replies: Replies) -> None:
     """Send me a question in private to get an answer."""
-    if not message.chat.is_group():
+    if not message.chat.is_multiuser():
         _search(message.text, replies)
 
 
